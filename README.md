@@ -2,6 +2,10 @@
 
 A fun, interactive, and delightfully chaotic portfolio website template that brings personality and playfulness to your professional presence online. This template combines professional content with entertaining interactions and animations to create a memorable experience for visitors.
 
+## 🌐 Live Demo
+
+Check out the live demo: [Bubbly Portfolio Theme](https://colaguevz.github.io/Sample-Portfolio--Bubbly-Theme-/)
+
 ## ✨ Features
 
 - **Interactive Elements**
