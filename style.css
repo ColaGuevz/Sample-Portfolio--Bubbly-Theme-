@@ -1,0 +1,424 @@
+/* --- FONTS --- */
+/* Comic Neue: For that classic Comic Sans feel but slightly more refined */
+/* Press Start 2P: Pixel font */
+/* Pacifico: Bubbly, handwritten */
+
+:root {
+    --font-meme: 'Comic Neue', 'Comic Sans MS', cursive; /* The legend itself */
+    --font-pixel: 'Press Start 2P', cursive;
+    --font-bubbly: 'Pacifico', cursive;
+
+    --color-pink: #FFC0CB;
+    --color-blue: #ADD8E6;
+    --color-green: #90EE90;
+    --color-yellow: #FFFFE0;
+    --text-dark: #333;
+    --text-fun: #E91E63; /* Hot pink */
+}
+
+body {
+    font-family: var(--font-meme);
+    background-color: #f0f8ff; /* AliceBlue - very light and airy */
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    overflow-x: hidden; /* Important for crazy animations! */
+    cursor: url('https://i.imgur.com/9pXpFUs.png'), auto; /* Sparkle cursor - needs to be small */
+}
+
+.rainbow-bg {
+    background: linear-gradient(120deg, #ff7eb9, #ff65a3, #7afcff, #feff9c, #fff740);
+    background-size: 300% 300%;
+    animation: rainbowMove 10s ease infinite;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.site-title {
+    font-family: var(--font-bubbly);
+    font-size: clamp(2.5em, 8vw, 4.5em);
+    margin: 10px 0;
+    color: #fff;
+}
+
+.subtitle {
+    font-family: var(--font-pixel);
+    font-size: clamp(0.8em, 2vw, 1.2em);
+    margin-top: 0;
+    letter-spacing: 1px;
+    animation: colorCycleText 5s infinite alternate;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+.nav-link {
+    font-family: var(--font-meme);
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: transform 0.2s ease-out, background-color 0.2s;
+}
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+.content-bubble {
+    background-color: white;
+    border: 5px dashed var(--text-fun);
+    border-radius: 30px; /* Super bubbly */
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 0px var(--color-blue),
+                10px 10px 0px var(--color-green),
+                15px 15px 0px var(--color-pink); /* Layered, offset shadows */
+    position: relative; /* For pseudo-elements or positioned children */
+    overflow: hidden; /* Clip any wild internal animations */
+}
+.pink-bubble { border-color: var(--color-pink); box-shadow: 5px 5px 0px var(--color-blue); }
+.green-bubble { border-color: var(--color-green); box-shadow: 5px 5px 0px var(--color-pink); }
+.yellow-bubble { border-color: var(--color-yellow); background-color: #fffacd; box-shadow: 5px 5px 0px var(--color-green); }
+
+
+.section-title {
+    font-size: clamp(1.8em, 5vw, 2.8em);
+    color: var(--text-fun);
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.comic-text { font-family: var(--font-meme); text-transform: uppercase; }
+
+.silly-gif {
+    display: block;
+    margin: 15px auto;
+    max-width: 150px;
+    border-radius: 15px;
+    border: 3px solid #ddd;
+}
+.profile-gif { max-width: 200px; animation: gentleFloat 3s infinite alternate ease-in-out; }
+.project-gif { max-width: 100%; height: 180px; object-fit: cover; border: none; border-bottom: 3px solid #ddd }
+
+.random-fact-box {
+    background-color: var(--color-yellow);
+    border: 2px dotted var(--text-dark);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-style: italic;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.project-card {
+    background-color: #fff9de;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden; /* for border animation */
+}
+.project-card:hover {
+    transform: translateY(-10px) rotate(2deg); /* Slight lift and tilt */
+}
+.project-card h3 {
+    font-family: var(--font-bubbly);
+    color: #ff69b4; /* Hot Pink */
+    margin-top: 0;
+}
+.rainbow-border { border: 5px solid; border-image-slice: 1; border-image-source: linear-gradient(to left, #743ad5, #d53a9d); animation: borderDance 3s infinite linear; }
+.green-border { border: 5px dashed var(--color-green); }
+.blue-border { border: 5px dotted var(--color-blue); }
+
+
+.action-button {
+    font-family: var(--font-pixel);
+    background-color: var(--text-fun);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px; /* Pill shape */
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 0 #c2185b; /* Darker pink for 3D effect */
+}
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 #c2185b, 0 6px 10px rgba(233, 30, 99, 0.4);
+}
+.action-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 0 #c2185b;
+}
+.confetti-button-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+.skills-list li {
+    background-color: #e0ffff; /* Light cyan */
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border-left: 5px solid var(--text-fun);
+    position: relative;
+    overflow: hidden;
+    font-size: 1.1em;
+}
+.skills-list li::after { /* "Progress" bar that is just silly */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: calc(var(--skill-level, 50) * 1%); /* Default to 50 if not set */
+    background: linear-gradient(90deg, rgba(255,192,203,0.5), rgba(173,216,230,0.5));
+    border-radius: 10px 0 0 10px;
+    animation: skillBarAnim 2s ease-out forwards;
+    z-index: 0;
+}
+.skills-list li span, .skills-list li .skill-icon {
+    position: relative; z-index: 1;
+}
+.skill-icon {
+    margin-right: 10px;
+    font-size: 1.3em;
+    display: inline-block;
+    animation: iconSpin 1s 1 ease-in-out 0.5s; /* Delayed spin */
+}
+.note-text {
+    font-size: 0.9em;
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.contact-button {
+    font-family: var(--font-meme);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Elastic bounce */
+}
+.contact-button .icon { font-size: 1.5em; }
+.email-button { background-color: var(--color-pink); color: var(--text-dark); border: 2px solid darken(var(--color-pink), 10%); }
+.social-button { background-color: var(--color-blue); color: var(--text-dark); border: 2px solid darken(var(--color-blue), 10%);}
+.linkedin-button { background-color: var(--color-green); color: var(--text-dark); border: 2px solid darken(var(--color-green), 10%);}
+
+.contact-button:hover {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+#click-counter-container {
+    margin-top: 30px;
+    text-align: center;
+    font-family: var(--font-pixel);
+    color: #555;
+    font-size: 0.9em;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    border: 1px dashed #ccc;
+}
+#click-count {
+    font-weight: bold;
+    color: var(--text-fun);
+    font-size: 1.2em;
+}
+
+footer {
+    margin-top: 40px;
+    padding-bottom: 20px; /* Extra padding for wobbly text if it goes off screen slightly */
+}
+.wobbly-footer-text {
+    animation: wobblyText 2s infinite ease-in-out alternate;
+    text-align: center; /* Center it before wiggling */
+}
+
+/* -- ANIMATIONS GALORE! -- */
+@keyframes rainbowMove {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes colorCycleText {
+    0% { color: #FFEB3B; } /* Yellow */
+    25% { color: #4CAF50; } /* Green */
+    50% { color: #2196F3; } /* Blue */
+    75% { color: #F44336; } /* Red */
+    100% { color: #FFEB3B; } /* Yellow */
+}
+@keyframes bounce { /* For .bouncy-text via JS */
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-20px);}
+  60% {transform: translateY(-10px);}
+}
+@keyframes wiggle { /* For .wiggle-text via JS */
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+@keyframes spin { /* For .spin-text via JS */
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes shaky { /* For .shaky-text via JS */
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+  20%, 40%, 60%, 80% { transform: translateX(3px); }
+}
+@keyframes zoomInOut { /* For .zoom-text */
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes gentleFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+@keyframes borderDance {
+    0% { border-image-source: linear-gradient(to left, #ff7eb9, #7afcff); }
+    25% { border-image-source: linear-gradient(to top, #7afcff, #feff9c); }
+    50% { border-image-source: linear-gradient(to right, #feff9c, #fff740); }
+    75% { border-image-source: linear-gradient(to bottom, #fff740, #ff65a3); }
+    100% { border-image-source: linear-gradient(to left, #ff7eb9, #7afcff); }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+@keyframes skillBarAnim {
+    from { width: 0; }
+    to { width: calc(var(--skill-level, 50) * 1%); }
+}
+@keyframes iconSpin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+@keyframes wobblyText {
+    0% { transform: skewX(-2deg) translateX(0px); }
+    50% { transform: skewX(2deg) translateX(5px); }
+    100% { transform: skewX(-2deg) translateX(0px); }
+}
+.pulse { animation: pulse 1.5s infinite ease-in-out; }
+.spin-on-hover:hover { animation: spin 0.5s linear 1; }
+.pulse-hover:hover { animation: pulse 0.8s infinite ease-in-out; }
+.wobble-hover:hover { animation: wiggle 0.5s infinite; }
+.zoom-text { animation: zoomInOut 3s infinite alternate; }
+
+
+/* --- CURSOR SPARKLES --- */
+#cursor-sparkle-container .sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: gold; /* Placeholder, will be random */
+    border-radius: 50%;
+    pointer-events: none; /* So they don't interfere with clicks */
+    animation: sparkle-fade-out 0.8s forwards;
+    transform-origin: center;
+    opacity: 0; /* Start invisible, JS will make them appear */
+    z-index: 9999;
+}
+@keyframes sparkle-fade-out {
+    0% { transform: scale(0) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+    100% { transform: scale(0.5) rotate(360deg); opacity: 0; }
+}
+
+/* --- ACHIEVEMENT POPUP --- */
+#achievement-unlocked {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(200%); /* Start off-screen */
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-family: var(--font-pixel);
+    font-size: 1.1em;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 10000;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Funky bounce */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#achievement-unlocked.show {
+    transform: translateX(-50%) translateY(0);
+}
+#achievement-unlocked.hidden {
+    transform: translateX(-50%) translateY(200%);
+}
+.achievement-star {
+    width: 24px;
+    height: 24px;
+    animation: starSpin 1s infinite linear;
+}
+@keyframes starSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* Ensure content is above fixed elements like footer/header if they overlap scroll */
+main > section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Small screen adjustments */
+@media (max-width: 600px) {
+    .site-title { font-size: 2em; }
+    .subtitle { font-size: 0.7em; }
+    nav ul li { display: block; margin: 5px 0;}
+    .content-bubble { margin: 20px 10px; padding: 15px; }
+    .contact-methods { flex-direction: column; }
+    .contact-button { width: 100%; justify-content: center; box-sizing: border-box; }
+}
